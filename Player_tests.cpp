@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// Given test
 TEST(test_player_get_name) {
     Player * alice = Player_factory("Alice", "Simple");
     ASSERT_EQUAL("Alice", alice->get_name());
@@ -12,6 +13,6 @@ TEST(test_player_get_name) {
     delete alice;
 }
 
-// Add more tests here
+//////////////// MY TESTS ////////////////
 
 TEST_MAIN()

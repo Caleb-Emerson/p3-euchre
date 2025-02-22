@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// Given test
 TEST(test_pack_default_ctor) {
     Pack pack;
     Card first = pack.deal_one();
@@ -12,6 +13,18 @@ TEST(test_pack_default_ctor) {
     ASSERT_EQUAL(SPADES, first.get_suit());
 }
 
-// Add more tests here
+//////////////// MY TESTS ////////////////
+
+// Pack::Pack default tests
+
+// Pack::Pack iostream tests
+
+// Pack::deal_one tests
+
+// Pack::reset tests
+
+// Pack::shuffle tests
+
+// Pack::empty tests
 
 TEST_MAIN()
