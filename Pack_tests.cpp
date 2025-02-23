@@ -83,7 +83,7 @@ TEST(test_pack_reset) {
     Pack default_pack = Pack();
     default_pack.reset();
     ASSERT_EQUAL(default_pack.deal_one(), Card(NINE, SPADES));
-    for (int i = 0; i < 24; ++i) {
+    for (int i = 0; i < 22; ++i) {
         default_pack.deal_one();
     }
     default_pack.reset();
