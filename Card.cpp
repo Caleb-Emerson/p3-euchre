@@ -203,12 +203,16 @@ Suit Suit_next(Suit suit) {
   switch (suit) {
     case 0:
       return CLUBS;
+      break;
     case 1:
       return DIAMONDS;
+      break;
     case 2:
       return SPADES;
+      break;
     case 3:
       return HEARTS;
+      break;
   }
 }
 
