@@ -239,9 +239,8 @@ bool Card_less(const Card &a, const Card &b, Suit trump) {
 //        the suit led to determine order, as described in the spec.
 bool Card_less (const Card &a, const Card &b,
                 const Card &led_card, Suit trump) {
-  // Do normal comparison if neither matches led suit or is trump
-  if ((a.get_suit() != led_card.get_suit() || a.is_trump(trump))
-      && (b.get_suit() != led_card.get_suit() || b.is_trump(trump))) {
+  // Do normal comparison if both are trump
+  if (a.is_trump(trump) && b.is_trump(trump)) {
     return Card_less(a, b, trump);
   }
 
@@ -261,4 +260,7 @@ bool Card_less (const Card &a, const Card &b,
       || (b.get_suit() == led_card.get_suit())) {
     return (b.get_suit() == led_card.get_suit());
   }
+
+  // Do normal comparison if neither are led card or trump
+  return Card_less(a, b, trump);
 }
