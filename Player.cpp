@@ -9,7 +9,7 @@ Player * Player_factory(const std::string &name, const std::string &strategy) {
   }
 
   if (strategy == "Human") {
-
+    return new HumanPlayer(name);
   }
 
   assert(false);
