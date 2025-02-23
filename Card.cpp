@@ -200,19 +200,14 @@ bool operator!=(const Card &lhs, const Card &rhs) {
 
 //EFFECTS Returns the next suit, which is the suit of the same color
 Suit Suit_next(Suit suit) {
-  switch (suit) {
-    case 0:
-      return CLUBS;
-      break;
-    case 1:
-      return DIAMONDS;
-      break;
-    case 2:
-      return SPADES;
-      break;
-    case 3:
-      return HEARTS;
-      break;
+  if (suit == SPADES) {
+    return CLUBS;
+  } else if (suit == CLUBS) {
+    return SPADES;
+  } else if (suit == HEARTS) {
+    return DIAMONDS;
+  } else {
+    return HEARTS;
   }
 }
 
