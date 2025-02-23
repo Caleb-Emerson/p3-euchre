@@ -76,6 +76,7 @@ TEST(test_pack_iostream_ctor_full) {
     for (int i = 0; i < 24; ++i) {
         ASSERT_EQUAL(io_pack.deal_one(), default_pack.deal_one());
     }
+    ifs.close();
 }
 
 // Pack::reset tests for when nothing has been dealt and for when all are dealt
