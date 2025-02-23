@@ -983,7 +983,7 @@ TEST(test_card_less_bower_non_bower) {
     Card jack_hearts = Card(JACK, HEARTS);
     Suit trump = HEARTS;
 
-    ASSERT_FALSE(Card_less(ace_hearts, jack_hearts, trump));
+    ASSERT_TRUE(Card_less(ace_hearts, jack_hearts, trump));
 }
 
 // Card_less ensures left bower less than right bower within trump suit
@@ -992,7 +992,7 @@ TEST(test_card_less_both_bowers) {
     Card jack_hearts = Card(JACK, HEARTS);
     Suit trump = HEARTS;
 
-    ASSERT_FALSE(Card_less(jack_diamonds, jack_hearts, trump));
+    ASSERT_TRUE(Card_less(jack_diamonds, jack_hearts, trump));
 }
 
 // Card_less ensures trump supremacy over non-trump
@@ -1078,7 +1078,7 @@ TEST(test_card_less_led_right_left_bower) {
     Card king_hearts = Card(KING, HEARTS);
     Suit trump = SPADES;
 
-    ASSERT_FALSE(Card_less(jack_clubs, jack_spades, king_hearts, trump));
+    ASSERT_TRUE(Card_less(jack_clubs, jack_spades, king_hearts, trump));
 }
 
 // Card_less with led card off-suit vs. off-suit
