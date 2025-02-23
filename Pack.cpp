@@ -48,26 +48,20 @@ void Pack::reset() {
 void Pack::shuffle() {
   // In-Shuffle 7 times
   for (int shuffle_num = 0; shuffle_num < 7; ++shuffle_num) {
-    // Arrange the top half of the pack into its own array
-    std::array<Card, PACK_SIZE / 2> top_half;
-    for (int i = 0; i < PACK_SIZE / 2; ++i) {
-      top_half.at(i) = cards.at(i);
-    }
+    int half = PACK_SIZE / 2;
+    std::array<Card, PACK_SIZE> temp;
 
-    // Arrange the bottom hald of the pack into its own array
-    std::array<Card, PACK_SIZE / 2> bottom_half;
-    for (int i = 0; i < PACK_SIZE / 2; ++i) {
-      bottom_half.at(i) = cards.at((PACK_SIZE / 2) + i);
-    }
-
-    // Reconstruct original Pack
+    int top_index = 0;
+    int bot_index = half;
     for (int i = 0; i < PACK_SIZE; ++i) {
       if (i % 2 == 0) {
-        cards.at(i) == bottom_half.at(i / 2);
+        temp.at(i) = cards.at(bot_index++);
       } else {
-        cards.at(i) == top_half.at((i - 1) / 2);
+        temp.at(i) = cards.at(top_index++);
       }
     }
+
+    cards = temp;
   }
 }
 
